@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Professional blue-gray palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 215 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 215 70% 45%;
+
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 215 25% 35%;
+
+    --muted: 210 25% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 215 65% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 90%;
+    --input: 215 20% 94%;
+    --ring: 215 70% 50%;
+
+    --radius: 0.5rem;
+
+    /* Dashboard specific colors */
+    --dashboard-nav: 215 30% 94%;
+    --dashboard-nav-active: 215 70% 50%;
+    --dashboard-sidebar: 0 0% 100%;
+    --dashboard-header: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 70% 50%), hsl(215 65% 55%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 25% 98%));
+    --gradient-hover: linear-gradient(135deg, hsl(215 70% 45%), hsl(215 65% 50%));
+    
+    /* Shadows */
+    --shadow-card: 0 2px 8px hsl(215 25% 27% / 0.08);
+    --shadow-hover: 0 4px 16px hsl(215 25% 27% / 0.12);
+    --shadow-active: 0 1px 4px hsl(215 25% 27% / 0.1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode blue-gray palette */
+    --background: 215 28% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 215 70% 60%;
+    --primary-foreground: 215 28% 8%;
+    --primary-hover: 215 70% 55%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 215 65% 65%;
+    --accent-foreground: 215 28% 8%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 18%;
+    --input: 215 25% 16%;
+    --ring: 215 70% 60%;
+
+    /* Dark dashboard colors */
+    --dashboard-nav: 215 25% 15%;
+    --dashboard-nav-active: 215 70% 60%;
+    --dashboard-sidebar: 215 25% 10%;
+    --dashboard-header: 215 25% 10%;
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 70% 60%), hsl(215 65% 65%));
+    --gradient-card: linear-gradient(180deg, hsl(215 25% 10%), hsl(215 25% 12%));
+    --gradient-hover: linear-gradient(135deg, hsl(215 70% 55%), hsl(215 65% 60%));
+    
+    /* Dark shadows */
+    --shadow-card: 0 2px 8px hsl(215 28% 8% / 0.3);
+    --shadow-hover: 0 4px 16px hsl(215 28% 8% / 0.4);
+    --shadow-active: 0 1px 4px hsl(215 28% 8% / 0.2);
+
+    --sidebar-background: 215 25% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 215 70% 60%;
+    --sidebar-primary-foreground: 215 28% 8%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 215 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .bg-gradient-hover {
+    background: var(--gradient-hover);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .shadow-active {
+    box-shadow: var(--shadow-active);
+  }
+  
+  .bg-dashboard-sidebar {
+    background-color: hsl(var(--dashboard-sidebar));
+  }
+  
+  .bg-dashboard-header {
+    background-color: hsl(var(--dashboard-header));
+  }
+}
